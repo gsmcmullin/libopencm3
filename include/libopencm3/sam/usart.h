@@ -43,7 +43,6 @@
 /* 0x002C:0x003C - Reserved */
 #define USART_FIDI(x)			MMIO32((x) + 0x0040)
 #define USART_NER(x)			MMIO32((x) + 0x0044)
-#define USART_NER(x)			MMIO32((x) + 0x0044)
 /* 0x0048 - Reserved */
 #define USART_IF(x)			MMIO32((x) + 0x004C)
 #define USART_MAN(x)			MMIO32((x) + 0x0050)

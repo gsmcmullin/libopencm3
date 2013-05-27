@@ -71,7 +71,7 @@ void usart_send(uint32_t usart, uint16_t data)
 
 uint16_t usart_recv(uint32_t usart)
 {
-	return USART_RHR(usart) & 0x1f;
+	return USART_RHR(usart) & 0x1ff;
 }
 
 void usart_wait_send_ready(uint32_t usart)
