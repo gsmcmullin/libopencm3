@@ -75,6 +75,9 @@
 #define CKGR_MOR_KEY			(0x37 << 16)
 #define CKGR_MOR_MOSCXTST_MASK		(0xFF << 8)
 /* Bit 7 - Reserved */
+#define CKGR_MOR_MOSCRCF_4MHZ		(0x00 << 4)
+#define CKGR_MOR_MOSCRCF_8MHZ		(0x01 << 4)
+#define CKGR_MOR_MOSCRCF_12MHZ		(0x02 << 4)
 #define CKGR_MOR_MOSCRCF_MASK		(0x07 << 4)
 #define CKGR_MOR_MOSCRCEN		(0x01 << 3)
 /* Bit 2 - Reserved */
@@ -141,6 +144,7 @@ void pmc_peripheral_clock_enable(uint8_t pid);
 void pmc_peripheral_clock_disable(uint8_t pid);
 void pmc_clock_setup_in_xtal_12mhz_out_84mhz(void);
 void pmc_clock_setup_in_rc_4mhz_out_84mhz(void);
+void pmc_clock_setup_in_rc_8mhz_out_84mhz(void);
 
 #endif
 
