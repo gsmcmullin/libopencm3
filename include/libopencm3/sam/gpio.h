@@ -67,5 +67,15 @@ static inline void gpio_int_disable(uint32_t gpioport, uint32_t gpios)
 	PIO_IDR(gpioport) = gpios;
 }
 
+static inline uint32_t gpio_get(uint32_t gpioport, uint32_t gpios)
+{
+	return PIO_PDSR(gpioport) & gpios;
+}
+
+static inline uint32_t gpio_port_read(uint32_t gpioport)
+{
+	return PIO_PDSR(gpioport);
+}
+
 #endif
 
