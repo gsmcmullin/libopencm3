@@ -62,3 +62,22 @@ void gpio_toggle(uint32_t gpioport, uint32_t gpios)
 	PIO_SODR(gpioport) = ~odsr & gpios;
 }
 
+void gpio_int_mode(uint32_t port, uint32_t pins, enum gpio_int mode)
+{
+	if (mode == GPIO_INT_ANYEDGE) {
+		PIO_AIMDR(port) = pins;
+		return;
+	}
+	PIO_AIMER(port) = pins;
+
+	if ((mode == GPIO_INT_LOW) || (mode == GPIO_INT_HIGH))
+		PIO_LSR(port) = pins;
+	else
+		PIO_ESR(port) = pins;
+
+	if ((mode == GPIO_INT_RISING) || (mode == GPIO_INT_HIGH))
+		PIO_REHLSR(port) = pins;
+	else
+		PIO_FELLSR(port) = pins;
+}
+

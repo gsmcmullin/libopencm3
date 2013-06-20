@@ -47,5 +47,25 @@ static inline void gpio_clear(uint32_t gpioport, uint32_t gpios)
 
 void gpio_toggle(uint32_t gpioport, uint32_t gpios);
 
+enum gpio_int {
+	GPIO_INT_RISING,
+	GPIO_INT_FALLING,
+	GPIO_INT_LOW,
+	GPIO_INT_HIGH,
+	GPIO_INT_ANYEDGE,
+};
+
+void gpio_int_mode(uint32_t gpioport, uint32_t gpios, enum gpio_int mode);
+
+static inline void gpio_int_enable(uint32_t gpioport, uint32_t gpios)
+{
+	PIO_IER(gpioport) = gpios;
+}
+
+static inline void gpio_int_disable(uint32_t gpioport, uint32_t gpios)
+{
+	PIO_IDR(gpioport) = gpios;
+}
+
 #endif
 

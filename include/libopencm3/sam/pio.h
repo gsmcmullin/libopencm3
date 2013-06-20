@@ -69,7 +69,7 @@
 /* 0x0074-0x007C - Reserved */
 #define PIO_SCIFSR(port)		MMIO32((port) + 0x0080)
 #define PIO_DIFSR(port)			MMIO32((port) + 0x0084)
-#define PIO_IFDGSR(port)		MMIO32((port) + 0x0088)
+#define PIO_IFSCSR(port)		MMIO32((port) + 0x0088)
 #define PIO_SCDR(port)			MMIO32((port) + 0x008C)
 /* 0x0090-0x009C - Reserved */
 #define PIO_OWER(port)			MMIO32((port) + 0x00A0)
