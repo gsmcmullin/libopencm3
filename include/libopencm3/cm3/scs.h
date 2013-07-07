@@ -21,6 +21,8 @@
 #ifndef LIBOPENCM3_CM3_SCS_H
 #define LIBOPENCM3_CM3_SCS_H
 
+#include <libopencm3/cm3/common.h>
+#include <libopencm3/cm3/memorymap.h>
 /*
  * All the definition hereafter are generic for CortexMx ARMv7-M
  * See ARM document "ARMv7-M Architecture Reference Manual" for more details.
